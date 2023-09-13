@@ -1,24 +1,7 @@
 // (Optional) Change the names below to your friends.
 
-//Add Interface Declaration
-interface Friend {
-    name: string;
-    phone: string;
-    age: number
-}
-interface Colleague {
-    name: string;
-    department: string;
-    contact: {
-        email: string;
-        extension: number;
-    };
-}
+import { Friend, Colleague, ColleagueHistory } from "./myTypes";
 
-interface ColleagueHistory {
-    current: Colleague[];
-    former: Colleague[]
-}
                 // Added Friend Data Type Declaration
 const friend1: Friend = {
     name: "Hasan Berk",
@@ -31,10 +14,7 @@ const friend1: Friend = {
     phone: "086--12345",
     age: 31,
   };
-                // Added Friend Data Type Declaration
-  const friends: Friend[] = [friend1, friend2];
-  console.log(friends[1]);
-  
+ 
   //   -------------------
   const colleague1: Colleague = {
     name: "Ralph Graham",
@@ -62,9 +42,14 @@ const friend1: Friend = {
       extension: 125,
     },
   };
+
+                    // Added Friend Data Type Declaration
+  export const friends: Friend[] = [friend1, friend2];
+  //console.log(friends[1]);
+
   export const colleagues: ColleagueHistory = {
     current: [colleague1, colleague2, colleague3],
     former: [],
   };
   
-  console.log(colleagues.current[0]);
+  //console.log(colleagues.current[0]);

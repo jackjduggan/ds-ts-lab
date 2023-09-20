@@ -7,12 +7,14 @@ const friend1: Friend = {
     name: "Hasan Berk",
     phone: "087-12345",
     age: 25,
+    dob: new Date("1998-11-20"),
   };
                 // Added Friend Data Type Declaration
   const friend2: Friend = {
     name: "Killian Halpin",
     phone: "086--12345",
     age: 31,
+    interests: ["Music", "Sport"]
   };
  
   //   -------------------

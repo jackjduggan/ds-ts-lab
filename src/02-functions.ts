@@ -66,6 +66,7 @@ function sortColleagues(
     return fullResult.slice(0,end)
 }
 
+console.log("Demonstration of sortColleagues() function")
 console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
 console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
 console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW
@@ -83,5 +84,20 @@ function findFriends(friends: Friend[], matchCriterion:(friend: Friend) => boole
     return criterionSatisfyingFriends;
 }
 
+console.log("Demonstration of findFriends() function")
 console.log(findFriends(friends, (friend) => friend.name.startsWith('Ki'))); //altered invocation for updated friends names
 console.log(findFriends(friends, (friend) => friend.age < 35));
+
+//function to add new interests to a friend's interest array.
+//takes a friend to add to and a string of the new interest
+function addInterest(friend: Friend, interestToBeAdded: string) {
+    if (!friend.interests) {    //if the friend doesn't have an interests array,
+        friend.interests = [];  //we add one now.
+    }
+    friend.interests.push(interestToBeAdded)    //the interest is then added to the array,
+    return friend.interests                     //and returned
+} 
+
+console.log("Demonstration of addInterest() function, adding 'Politics' to the friend at index 1")
+console.log(addInterest(friends[1], 'Politics'))
+console.log(friends[1])

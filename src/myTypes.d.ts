@@ -44,3 +44,26 @@ export type BuddyList = {
   administrator: Administrator;
   members: Buddy[];
 };
+
+// Utility types
+export type FriendPartial = Partial<Friend>
+
+// Type for gaining access to an event, e.g. concert
+export type EventPass = Omit<Colleague, "contact"> & {
+  passCode : number;
+}
+
+// Make person's properties immutable.
+export type SecureFriendContact = Readonly<Pick<Friend,"name" | "phone" > >
+
+// Type that combines the properties of both 'Friend' and 'Colleague'
+export type FCIntersection = {
+  name: string;
+  age: number;
+  department: string,
+  phone: string,
+  contact: {
+    email: string;
+    extension: number;
+  };
+}
